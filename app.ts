@@ -1,8 +1,9 @@
 /** @format */
 
-const express = require("express");
-const mongoose = require("mongoose");
-
+import express from "express";
+import { Request, Response } from "express";
+import mongoose from "mongoose";
+import authRoutes from "./routes/authRoutes";
 const app = express();
 
 // middleware
@@ -24,5 +25,6 @@ mongoose
   .catch((err) => console.log(err));
 
 // routes
-app.get("/", (req, res) => res.render("home"));
+app.get("/", (req: Request, res: Response) => res.render("home"));
 app.get("/smoothies", (req, res) => res.render("smoothies"));
+app.use(authRoutes);

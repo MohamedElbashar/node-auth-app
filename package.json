@@ -8,9 +8,15 @@
         "express": "^4.17.1",
         "mongoose": "^5.12.12"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "@types/express": "^4.17.12",
+        "@types/node": "^15.6.2",
+        "ts-node": "^10.0.0",
+        "typescript": "^4.3.2"
+    },
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "npx nodemon --watch src -e ts --exec ts-node app.ts"
     },
     "repository": {
         "type": "git",
